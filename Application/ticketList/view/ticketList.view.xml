@@ -1,0 +1,15 @@
+<mvc:View controllerName="SapUI5Tutorial.Application.ticketList.controller.ticketList"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<VBox>
+		<NavContainer id="navCon" width="100%" height="55em" class="navContainerControl sapUiSmallMarginBottom">
+			<Page id="p1" showHeader="false" showNavButton="true">
+				<mvc:XMLView viewName="SapUI5Tutorial.Application.Ticket.view.Ticket" />
+			</Page>
+			<Page id="p2" showHeader="false">
+				<mvc:XMLView viewName="SapUI5Tutorial.Application.TicketEkleme.view.TicketEkleme" height="45rem"/>
+			</Page>
+		</NavContainer>
+	</VBox>
+</mvc:View>

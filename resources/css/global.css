@@ -1,0 +1,20 @@
+* {
+    outline: none !important;
+}
+
+.sapMInputBase {
+    /* height: 2.25rem; */
+    /* background: transparent; */
+    /* position: relative; */
+    display: block !important;
+    /* vertical-align: top; */
+    /* outline: none; */
+    /* box-sizing: border-box; */
+    /* line-height: 0; */
+}
+
+.sapMSlt,
+.sapMSltLabel,
+.sapMSltArrow {
+    display: block !important;
+}

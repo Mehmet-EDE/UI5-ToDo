@@ -1,0 +1,76 @@
+<mvc:View controllerName="SapUI5Tutorial.Application.Ticket.controller.Ticket"
+	xmlns="sap.ui.table"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified"
+	xmlns:c="sap.ui.core"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	xmlns:m="sap.m" height="100%">
+	<m:Page showHeader="True" enableScrolling="true" class="sapUiContentPadding">
+		<m:content>
+			<Table rows="{/projeler}" id="deneme" selectionMode="None" >
+				<contextMenu >
+					<u:Menu >
+						<u:MenuItem select="contextMenu" app:param="edit" text="düzenle"/>
+					</u:Menu>
+				</contextMenu>
+
+				<extension>
+					<m:OverflowToolbar>
+						<m:Title id="title" text="Ticket"/>
+						<m:ToolbarSpacer />
+						<m:Button text="Proje listesi" type="Transparent" press="projeListesi" icon="sap-icon://activity-2"/>
+						<m:Button text="Ticket ekle" type="Transparent" icon="sap-icon://activities" press="ticketEkle" id="addTicket"/>
+						<m:Button text="Çıkış yap" press="logOutTicket" type="Transparent" icon="sap-icon://visits" />
+						<m:Button text="Ticket edit/Ticket add" press="ticketAdd" type="Transparent" icon="sap-icon://activity-2" />
+					</m:OverflowToolbar>
+				</extension>
+				<columns>
+					<Column >
+						<m:Label text="Proje adı" />
+						<template>
+							<m:Text text="{path: 'projead', formatter:'.deneme'}" />
+						</template>
+					</Column>
+					<Column >
+						<m:Label text="Konu" />
+						<template>
+							<m:Label text="{konu}"/>
+						</template>
+					</Column>
+					<Column >
+						<m:Label text="Kimden" />
+						<template>
+							<m:Label text="{kimden}"/>
+						</template>
+					</Column>
+					<Column >
+						<m:Label text="Kime" />
+						<template>
+							<m:Label text="{kime}"/>
+						</template>
+					</Column>
+					<Column >
+						<m:Label text="Başlangıç" />
+						<template>
+							<m:Label text="{başlangıç}" />
+						</template>
+					</Column>
+					<Column >
+						<m:Label text="Bitiş" />
+						<template>
+							<m:Label text="{bitiş}" />
+						</template>
+					</Column>
+
+					<Column >
+						<m:Label text="Durum" />
+						<template>
+							<m:Label text="{path: 'durum', formatter:'.durumFormatter'}" />
+
+						</template>
+					</Column>
+				</columns>
+			</Table>
+		</m:content>
+	</m:Page>
+</mvc:View>

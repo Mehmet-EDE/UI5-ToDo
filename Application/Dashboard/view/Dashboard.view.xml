@@ -1,0 +1,13 @@
+<mvc:View controllerName="SapUI5Tutorial.Application.Dashboard.controller.Dashboard"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:l="sap.ui.layout"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" class="sapUiSizeCompact">
+    <Page enableScrolling="false" showHeader="false" class="sapUiContentPadding">
+        <content>
+           <Button  text="dash" type="Transparent" press="onPress" ariaLabelledBy="editButtonLabel"/>
+        </content>
+    </Page>
+</mvc:View>

@@ -1,0 +1,17 @@
+<mvc:View controllerName="SapUI5Tutorial.Application.LoginPage.controller.LoginPage"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Page enableScrolling="false" showHeader="false" class="sapUiContentPadding">
+		<content>
+			<FlexBox backgroundDesign="Solid" height="90%" direction="Column" alignItems="Center" justifyContent="Center">
+				<Image activeSrc="" src="resources\images\person.jpg" width="95px" decorative="true" mode="Image" />
+				<Input id="userName" placeholder="mail adresi:" value="{/kayıt/mail}" type="Email" submit="giris"></Input>
+				<Input id="pass" placeholder="Şifre:" type="Password" value="{/kayıt/sifre}" submit="giris"></Input>
+				<Button id="login" text="Giriş yap" press="onPress" />
+				<Button id="register" class=".onResizableDialogPress" text="Kayıt ol" press="register"/>
+			</FlexBox>
+		</content>
+	</Page>
+</mvc:View>

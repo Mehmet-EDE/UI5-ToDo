@@ -1,0 +1,25 @@
+<mvc:View controllerName="SapUI5Tutorial.Application.RegisterPage.controller.RegisterPage"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+
+
+	<Page enableScrolling="false" showHeader="false" class="sapUiContentPadding">
+		<content>
+
+			<FlexBox backgroundDesign="Transparent" height="90%" direction="Column" alignItems="Center" justifyContent="Center" renderType="Div">
+				<Image activeSrc="" src="\Application\LoginPage\services\yagup.png" width="155px" decorative="true" mode="Image" />
+				<Input id="mail" placeholder="Mail adresi:" value="{/kisi/mail}">
+				</Input>
+				<Input id="name" placeholder="Ad:" value="{/kisi/ad}">
+				</Input>
+				<Input id="surname" placeholder="Soyad:" value="{/kisi/soyad}">
+				</Input>
+				<u:FileUploader value="{/kisi/fotograf}" id="fileUploader" name="myFileUpload" uploadUrl="upload/" change="onChange" tooltip="Upload your file to the local server" uploadComplete="handleUploadComplete"/>
+				<Button id="register" text="Kayıt ol" press="onPress" />
+				<Button id="homePage" text="Anasayfaya dön" press="HomePage" />
+			</FlexBox>
+		</content>
+	</Page>
+</mvc:View>

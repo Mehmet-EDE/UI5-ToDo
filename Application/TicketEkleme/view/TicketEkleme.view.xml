@@ -1,0 +1,67 @@
+<mvc:View controllerName="SapUI5Tutorial.Application.TicketEkleme.controller.TicketEkleme"
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:c="SapUI5Tutorial.resources.components">
+	<Page title="Ticket Edit" titleLevel="H2" showNavButton="true" navButtonPress="NavBack">
+		<VBox alignItems="Center" class="sapUiLargeMarginBeginEnd sapUiMediumMarginTop">
+			<VBox width="50%">
+				<Label text="Proje :" width="100%" labelFor="productInput"/>
+				<ComboBox id="multiInput1" items="{
+				path: '/listele2',
+				sorter: { path: '/listele2/ad'}
+			}" selectedKey="{/editValues/projead}" showValueHelp="false">
+					<core:Item key="{id}" text="{ad}" />
+				</ComboBox>
+			</VBox>
+			<VBox class="sapUiSmallMarginTop" width="50%">
+				<Label text="Konu :" labelFor="InputKonu"/>
+				<Input id="InputKonu" class="sapUiSmallMarginBottom" type="Text" value="{/editValues/konu}" enabled="true" />
+			</VBox>
+			<VBox width="50%">
+				<Label text="Kimden :" width="100%" labelFor="kimdenMinput" id="kimdenLabel"/>
+				<c:editMultiInput id="kimdenMinput" selectPerson="selectPerson" suggestionItems="{
+				path: '/ticket',
+				sorter: { path: '/ticket/ad' }
+			}" showValueHelp="false">
+					<core:Item key="{id}" text="{ad}" />
+				</c:editMultiInput>
+			
+			</VBox>
+			<VBox width="50%">
+				<Label text="Kime :" width="100%" labelFor="multiInput3"/>
+				<c:editMultiInput id="multiInput3" selectPerson="selectPerson" suggestionItems="{
+				path: '/ticket',
+				sorter: { path: '/ticket/ad' }
+			}" showValueHelp="false">
+					<core:Item key="{id}" text="{ad}" />
+				</c:editMultiInput>
+			</VBox>
+			<VBox width="50%">
+				<Label text="Başlangç:" width="100%" labelFor="DP3"/>
+				<DatePicker id="DP3" displayFormat="YYYY-MM-dd" change="handleChange" value="{/editValues/başlangıç}" class="sapUiSmallMarginBottom"/>
+			</VBox>
+			<VBox width="50%">
+				<Label text="Durum:" width="100%" labelFor="selectDurum"/>
+				<Select id="selectDurum" forceSelection="false" items="{
+							path: '/status',
+							sorter: { path: '/status/ad' }
+						}">
+					<core:Item key="{id}" text="{durum}" />
+				</Select>
+			</VBox>
+			<VBox width="50%">
+				<Label text="Bitiş:" width="100%" labelFor="DP4"/>
+				<DatePicker id="DP4" displayFormat="YYYY-MM-dd" change="handleChange" value="{/editValues/bitiş}" class="sapUiSmallMarginBottom"/>
+			</VBox>
+			<VBox>
+				<Input id="statusInput" class="sapUiSmallMarginBottom" type="Text" enabled="true" />
+				<Button type="default" id="addStatus" press="addStatus" text="Durum ekle"/>
+			</VBox>
+			<VBox width="50%">
+				<Button type="Default" text="Kaydet" press="onPress" id="Kaydet"/>
+			</VBox>
+		</VBox>
+	</Page>
+</mvc:View>

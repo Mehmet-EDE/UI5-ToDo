@@ -1,0 +1,30 @@
+<mvc:View controllerName="SapUI5Tutorial.Application.ProjeListe.controller.ProjeListe"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Table id="productsTable" items="{/listele}" mode="Delete" delete="handleDelete">
+		<headerToolbar>
+			<OverflowToolbar>
+				<Title text="Proje Listesi" level="H2"/>
+				<ToolbarSpacer/>
+				<Button text="Çıkış yap" press="logOut" icon="sap-icon://visits" />
+				<Button text="Personeller" press="onPress" icon="sap-icon://employee-pane" />
+				<Button text="Ticket ekranı" press="ticketPage" icon="sap-icon://activity-items" />
+				<Button text="" press=".addProject" width="85px" icon="sap-icon://activities" />
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column id="projeAd" hAlign="Middle">
+				<Text text="Proje adı" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem type="Active" press="editProject">
+				<cells>
+					<ObjectIdentifier title="{ad}" class="sapUiTinyMarginTopBottom" />
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</mvc:View>

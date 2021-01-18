@@ -1,0 +1,51 @@
+<mvc:View controllerName="SapUI5Tutorial.Application.PersonelListe.controller.PersonelListe"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Page enableScrolling="false" showHeader="false" class="sapUiContentPadding">
+		<content>
+			<SplitApp id="SplitContDemo" initialDetail="detail" initialMaster="master">
+				<detailPages>
+					<Page id="detail" title="Detaylar" backgroundDesign= "Solid" navButtonText="Back" navButtonPress=".onPressDetailBack" class="sapUiStdPage">
+						<HBox justifyContent="End">
+							<Button type="Transparent" text="Çıkış yap" press="logOut" id="outBtn" icon="sap-icon://visits"></Button>
+							<Button text="Proje listesi" press="projeList" type="Transparent" icon="sap-icon://activity-2" />
+						</HBox>
+						<VBox width="50%" id="adminInput">
+							<Label text="İsim:" labelFor="nameInput" />
+							<Input value="{/getListStaff/ad}" id="nameInput" class="sapUiSmallMarginBottom" placeholder="Ad giriniz." />
+							<Label text="Soyisim:" labelFor="surnameInput" />
+							<Input value="{/getListStaff/soyad}" id="surnameInput" class="sapUiSmallMarginBottom" placeholder="Soyadını giriniz." />
+							<Label text="Mail adresi:" labelFor="mailInput" />
+							<Input value="{/getListStaff/mail}" id="mailInput" class="sapUiSmallMarginBottom" placeholder="Mail adresi." />
+							<u:FileUploader value="{/getListStaff/fotograf}" id="fileUploader" name="myFileUpload" uploadUrl="upload/" change="onChange" tooltip="Upload your file to the local server" uploadComplete="handleUploadComplete"/>
+							<Button type="Accept" text="Kaydet" press="onPress" id="saveBtn" icon="sap-icon://accept" ariaDescribedBy="acceptButtonDescription genericButtonDescription">
+								<layoutData>
+									<FlexItemData growFactor="1" />
+								</layoutData>
+							</Button>
+							<Button type="Reject" text="Düzenle" press="onEdit" id="editBtn" icon="sap-icon://user-edit" ariaDescribedBy="acceptButtonDescription genericButtonDescription">
+								<layoutData>
+									<FlexItemData growFactor="1" />
+								</layoutData>
+							</Button>
+							<Button type="Reject" text="personel sil" press="onDelete" id="deleteBtn" icon="sap-icon://delete" ariaDescribedBy="acceptButtonDescription genericButtonDescription">
+								<layoutData>
+									<FlexItemData growFactor="1" />
+								</layoutData>
+							</Button>
+						</VBox>
+					</Page>
+				</detailPages>
+				<masterPages>
+					<Page id="master" title="Kişiler" backgroundDesign= "List" icon="sap-icon://action" class="sapUiStdPage">
+						<List id="deneme" mode="SingleSelectMaster" select="onSelect" items="{/getListStaff}">
+							<StandardListItem id="shortList" title="{ad} {soyad}" description="{mail}" icon="{fotoğraf}" iconDensityAware="false" iconInset="false" press="onPresslist"/>
+						</List>
+					</Page>
+				</masterPages>
+			</SplitApp>
+		</content>
+	</Page>
+</mvc:View>
